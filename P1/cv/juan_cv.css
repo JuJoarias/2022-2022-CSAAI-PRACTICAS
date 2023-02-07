@@ -13,9 +13,9 @@ min-height: 700px;
 }
 
 @font-face{
-   font-family: "StarJediOutline-y0xm";
-   src: url("StarJediOutline-y0xm.ttf");
-   font-style: normal;
+  font-family: "StarJediOutline-y0xm";
+  src: url("StarJediOutline-y0xm.ttf");
+   
 }
 
 .titulo{
@@ -25,8 +25,8 @@ min-height: 700px;
   color: white;
   border: white 5px double;
   border-bottom: none;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 0px;
   margin-bottom: 0px;
 }
 
