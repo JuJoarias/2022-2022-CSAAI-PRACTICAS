@@ -9,7 +9,7 @@
 .columna {
 float: left;
 padding: 10px;
-min-height: 800px;
+min-height: 700px;
 }
 
 @font-face{
@@ -22,7 +22,7 @@ min-height: 800px;
   text-align: center;
   font-size: 30px;
   color: white;
-  border: white 5px ;
+  border: white 5px double;
   border-bottom: none;
   padding: 10px;
   margin: 10px;
@@ -36,7 +36,6 @@ body{
   background-size: 100% 100%;
   padding: 0px;
   margin: 50px;
-  border: #1b1812 10px double;
 }
 
 
@@ -57,17 +56,13 @@ clear: both;
 
 #c1 {
     
-    background-color: rgba(58, 58, 185, 0.637);
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
+  background-color: rgba(58, 58, 185, 0.637);
+  border: white 5px double;
 }
 
 #c2 {
   background-color: rgba(168, 102, 47, 0.548);
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
+  border: white 5px double;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
