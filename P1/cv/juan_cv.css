@@ -9,8 +9,36 @@
 .columna {
 float: left;
 padding: 10px;
-min-height: 500px;
+min-height: 800px;
 }
+
+font-face{
+   font-family: "StarJediOutline-y0xm";
+   src: url("StarJediOutline-y0xm.ttf");
+}
+
+.titulo{
+  font-family: "StarJediOutline-y0xm";
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  border-color:rgb(235, 141, 1) ;
+  border-bottom: none;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+body{
+  background-image: url(espacio.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  padding: 0px;
+  margin: 50px;
+  border: #1b1812 10px double;
+}
+
 
 .izquierda {
 width: 30%;
@@ -28,11 +56,18 @@ clear: both;
 }
 
 #c1 {
-    background-color:rgb(212, 25, 25);
+    
+    background-color: rgba(58, 58, 185, 0.637);
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
 
 #c2 {
-    background-color:rgb(105, 167, 48);
+  background-color: rgba(168, 102, 47, 0.548);
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
