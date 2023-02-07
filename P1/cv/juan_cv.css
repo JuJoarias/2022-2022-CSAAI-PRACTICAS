@@ -22,7 +22,7 @@ min-height: 800px;
   text-align: center;
   font-size: 30px;
   color: white;
-  border-color:rgb(235, 141, 1) ;
+  border: white 5px ;
   border-bottom: none;
   padding: 10px;
   margin: 10px;
