@@ -12,7 +12,7 @@ padding: 10px;
 min-height: 800px;
 }
 
-font-face{
+@font-face{
    font-family: "StarJediOutline-y0xm";
    src: url("StarJediOutline-y0xm.ttf");
 }
