@@ -53,6 +53,14 @@ h3{
   color: white;
 }
 
+p{
+  color: rgba(230, 152, 9, 0.767);
+}
+
+ul{
+  color:rgba(230, 152, 9, 0.767)
+}
+
 .izquierda {
 width: 30%;
 }
@@ -75,7 +83,7 @@ clear: both;
 }
 
 #c2 {
-  background-color: rgba(168, 102, 47, 0.548);
+  background-color: rgba(58, 58, 185, 0.637);
   border: white 5px double;
 }
 
