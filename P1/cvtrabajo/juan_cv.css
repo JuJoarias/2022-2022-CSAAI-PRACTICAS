@@ -43,6 +43,10 @@ body{
   margin: 50px;
 }
 
+.informacion{
+  border-bottom: white 5px double;
+}
+
 h2{
   font-family: "galaxy";
   color: white;
