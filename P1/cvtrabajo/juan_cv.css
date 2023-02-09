@@ -45,6 +45,19 @@ body{
 
 .informacion{
   border-bottom: white 5px double;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: 30px;
+  padding: 10px;
+}
+
+.contacto{
+  border-bottom: white 5px double;
+}
+
+.estudios{
+  border-bottom: white 5px double;
 }
 
 h2{
