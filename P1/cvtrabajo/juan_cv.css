@@ -43,21 +43,13 @@ body{
   margin: 50px;
 }
 
-.informacion{
+.enunciado{
   border-bottom: white 5px double;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  height: 30px;
+  margin-top: 20px;
   padding: 10px;
-}
-
-.contacto{
-  border-bottom: white 5px double;
-}
-
-.estudios{
-  border-bottom: white 5px double;
 }
 
 h2{
@@ -97,11 +89,13 @@ clear: both;
     
   background-color: rgba(58, 58, 185, 0.637);
   border: white 5px double;
+  text-align: center;
 }
 
 #c2 {
   background-color: rgba(58, 58, 185, 0.637);
   border: white 5px double;
+  text-align: center;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
