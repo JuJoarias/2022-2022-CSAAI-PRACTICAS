@@ -59,13 +59,19 @@ body{
   text-align: center;
   border-bottom: white 5px double;
   height: 50px;
-  margin-top: 60px;
+  margin-top: 150px;
   padding: 10px;
 }
 
 .cuerpo{
   text-align: left;
   margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.cuerpo1{
+  text-align: left;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
