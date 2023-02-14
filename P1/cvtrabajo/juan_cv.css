@@ -46,12 +46,23 @@ body{
 .enunciado{
   text-align: center;
   border-bottom: white 5px double;
-  margin: 0px;
+  height: 60px;
+  margin-top: 0px;
   padding: 10px;
 }
 
-.habilidades{
+.enunciado1{
+  text-align: center;
+  border-bottom: white 5px double;
+  height: 90px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.cuerpo{
   text-align: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 h2{
