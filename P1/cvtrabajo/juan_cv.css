@@ -51,6 +51,10 @@ body{
   padding: 10px;
 }
 
+.enlace{
+  color: orange;
+}
+
 .enunciado1{
   text-align: center;
   border-bottom: white 5px double;
