@@ -1,11 +1,118 @@
-.titulo{
-    font-family: "jabba";
-    text-align: center;
-    font-size: 100%;
-    color: white;
-    border: white 5px double;
-    border-bottom: none;
-    padding: 5px;
-    margin: 0px;
-    margin-bottom: 0px;
+* {
+  box-sizing: border-box;
+}
+
+@font-face{
+  font-family: "jabba";
+  src: url("jabba.ttf");
+}
+
+@font-face{
+  font-family: "galaxy";
+  src: url("galaxy.ttf");
+}
+
+.columna {
+  float: left;
+  padding: 10px;
+  min-height: 600px;
   }
+
+  .izquierda {
+    width: 80%;
+    }
+    
+    .derecha {
+    width: 20%;
+    }
+
+  .filla:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #c1 {
+    background-color: rgba(58, 58, 185, 0.637);
+    border: white 5px double;
+  }
+  
+  #c2 {
+    background-color: rgba(58, 58, 185, 0.637);
+    border: white 5px double;
+  }
+
+.titulo{
+  font-family: "jabba";
+  text-align: center;
+  font-size: 100%;
+  color: white;
+  border: white 5px double;
+  padding: 5px;
+  margin: 0px;
+  margin-bottom: 0px;
+}
+
+body{
+  background-image: url(espacio.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  padding: 0px;
+  margin: 50px;
+}
+
+
+.enunciado{
+  text-align: center;
+  border-bottom: white 5px double;
+  margin-top: 5px;
+  padding: 0px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.informacion{
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+h2{
+
+  font-family: "galaxy";
+  color: white;
+}
+
+p{
+  color: rgba(230, 152, 9, 0.767);
+}
+
+ul{
+  color:rgba(230, 152, 9, 0.767)
+}
+
+.enlace{
+  color: orange;
+}
+
+.iresponsive {
+  padding: 10px;
+  float: left;
+  width: 50%;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .columna {
+    width: 100%;
+  }
+
+  .iresponsive {
+      width: 100%;
+  }
+}
