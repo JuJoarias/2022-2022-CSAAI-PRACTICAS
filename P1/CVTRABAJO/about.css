@@ -1,0 +1,11 @@
+.titulo{
+    font-family: "jabba";
+    text-align: center;
+    font-size: 100%;
+    color: white;
+    border: white 5px double;
+    border-bottom: none;
+    padding: 5px;
+    margin: 0px;
+    margin-bottom: 0px;
+  }
