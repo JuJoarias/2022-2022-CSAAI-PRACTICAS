@@ -9,14 +9,10 @@ const texto = document.getElementById('texto');
 //-- Funcion de retrollamada de la pulsación del párrafo
 boton1.onclick = () => {
     console.log("Has pulsado el boton1!");
+    texto.innerHTML+=" 1"
 }
 
 boton2.onclick = () => {
     console.log("Has pulsado el boton2!");
-}
-
-texto.onclick = () => {
-    console.log("Has pulsado el texto!");
-    texto.innerHTML+=" click"
-    
+    texto.innerHTML+=" 2"
 }
