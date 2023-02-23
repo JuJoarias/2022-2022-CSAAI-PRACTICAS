@@ -25,7 +25,7 @@ min-height: 600px;
 .titulo{
   font-family: "jabba";
   text-align: center;
-  font-size: 30px;
+  font-size: 100%;
   color: white;
   border: white 5px double;
   border-bottom: none;
@@ -43,6 +43,45 @@ body{
   margin: 50px;
 }
 
+.enunciado{
+  text-align: center;
+  border-bottom: white 5px double;
+  margin-top: 5px;
+  padding: 0px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enlace{
+  color: orange;
+}
+
+.cuerpo{
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.youtube{
+  display: inline-flex;
+  padding: 25px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.video{
+  padding: 10 20px;
+  float: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h2{
   font-family: "galaxy";
   color: white;
@@ -51,6 +90,14 @@ h2{
 h3{
   font-family: "galaxy";
   color: white;
+}
+
+p{
+  color: rgba(230, 152, 9, 0.767);
+}
+
+ul{
+  color:rgba(230, 152, 9, 0.767)
 }
 
 .izquierda {
@@ -75,7 +122,7 @@ clear: both;
 }
 
 #c2 {
-  background-color: rgba(168, 102, 47, 0.548);
+  background-color: rgba(58, 58, 185, 0.637);
   border: white 5px double;
 }
 
@@ -83,14 +130,24 @@ clear: both;
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
-    width: 100%;
+    width: auto;
     height: auto;
 }
 
 .iresponsive {
-    padding: 0 6px;
+    padding: 10px;
     float: left;
     width: 50%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .imagen{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
   }
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
@@ -103,6 +160,10 @@ img {
 
     .iresponsive {
         width: 100%;
+    }
+
+    .video{
+      width: 100%;
     }
 }
 
