@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 300;
-canvas.height = 100;
+canvas.width = 500;
+canvas.height = 300;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -26,12 +26,12 @@ function update()
   //-- (física del movimiento rectilineo uniforme)
 
    //-- Condición de rebote en extremos verticales del canvas
-   if (x < 0 || x >= (canvas.width - 40) ) {
+   if (x < 0 || x >= (canvas.width - 50) ) {
     velx = -velx;
   }
 
   //-- Condición de rebote en extremos horizontales del canvas
-  if (y <= 0 || y > 60) {
+  if (y <= 0 || y >= canvas.height- 60) {
     vely = -vely;
   }
 
@@ -44,8 +44,9 @@ function update()
 
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
-    ctx.rect(x, y, 20, 20);
-    ctx.rect(x+20, y+20, 20, 20);
+    ctx.rect(x+25, y, 10, 20);
+    ctx.rect(x+10, y+20, 40, 40);
+    ctx.rect(x, y+30, 10, 10);
 
     //-- Dibujar
     ctx.fillStyle = 'red';
