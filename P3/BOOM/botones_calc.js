@@ -6,20 +6,20 @@ const ESTADO = {
 }
 
 let estado = ESTADO.INIT;
-contador = 0;
+
 function digito(ev)
 {
     if (estado == ESTADO.INIT) {
-        crono.start();
+        
         estado = ESTADO.OP1;
     } else {   
+        crono.start();
         for (i=0; i<numero_secreto.length;i++){
             numeros(ev);
             
             }
         }    
 } 
-
 
 
 display1 = document.getElementById("display_nsecreto1")
@@ -35,25 +35,29 @@ for (let boton of digitos) {
 
 function numeros(ev){
     if (numero_secreto[i]== parseInt(ev.target.value)){
-        console.log(contador)
-        
+        var aciertos = [];
+        console.log(aciertos)
         if (i == 0){
+            numero_secreto.splice(i,1);
             display1.innerHTML = ev.target.value;
-            contador +=1;
+            aciertos.push(numero_secreto[i]);
         }
         if (i == 1){
+            numero_secreto.splice(i,1);
             display2.innerHTML = ev.target.value;
-            contador +=1;
+            aciertos.push(numero_secreto[i]);
         }
         if (i == 2){
+            numero_secreto.splice(i,1);
             display3.innerHTML = ev.target.value;
-            contador +=1;
+            aciertos.push(numero_secreto[i]);
         }
         if (i == 3){
+            numero_secreto.splice(i,1);
             display4.innerHTML = ev.target.value;
-            contador +=1;
+            aciertos.push(numero_secreto[i]);
         }
-        if(contador == 4){
+        if(aciertos.length == 4){
             crono.stop();
         }
     }
