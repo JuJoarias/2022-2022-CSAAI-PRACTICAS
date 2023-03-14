@@ -27,7 +27,7 @@ function digito(ev)
         
             numeros(ev);
         }else{
-            console.log('Ya has ganado, recarga la pagina o pulse reset')
+            alert('Ya has ganado, recarga la pagina o pulse reset')
         }
         
             
@@ -78,14 +78,16 @@ function numeros(ev){
         
                 display4.innerHTML = ev.target.value;
                 aciertos.push(numero_secreto[i]);
+                numero_secreto[i] = 11;
                 
             }
             
             if(aciertos.length == 4){
-                console.log('HAS GANADO!!!')
+                
                 crono.stop();
                 aciertos = [];
                 numero_secreto =[];
+                alert('HAS GANADO!!!')
             }
 
             break;
