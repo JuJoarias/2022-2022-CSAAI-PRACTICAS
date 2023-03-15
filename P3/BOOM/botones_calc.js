@@ -34,6 +34,9 @@ function digito(ev)
     }    
 } 
 
+function delay(ms){
+    return new Promise(resolve => setTimeout(resolve,ms))
+}
 
 display1 = document.getElementById("display_nsecreto1")
 display2 = document.getElementById("display_nsecreto2")
@@ -53,6 +56,7 @@ function numeros(ev){
             if (i == 0){
                 
                 display1.innerHTML = ev.target.value;
+                display1.style.color = 'lightgreen';
                 aciertos.push(numero_secreto[i]);
                 numero_secreto[i] = 11;
                 
@@ -61,6 +65,7 @@ function numeros(ev){
             if (i == 1){
                 
                 display2.innerHTML = ev.target.value;
+                display2.style.color = 'lightgreen';
                 aciertos.push(numero_secreto[i]);
                 numero_secreto[i] = 11;
     
@@ -69,6 +74,7 @@ function numeros(ev){
             if (i == 2){
                 
                 display3.innerHTML = ev.target.value;
+                display3.style.color = 'lightgreen';
                 aciertos.push(numero_secreto[i]);
                 numero_secreto[i] = 11;
                 
@@ -77,6 +83,7 @@ function numeros(ev){
             if (i == 3){
         
                 display4.innerHTML = ev.target.value;
+                display4.style.color = 'lightgreen';
                 aciertos.push(numero_secreto[i]);
                 numero_secreto[i] = 11;
                 
@@ -87,7 +94,8 @@ function numeros(ev){
                 crono.stop();
                 aciertos = [];
                 numero_secreto =[];
-                alert('HAS GANADO!!!')
+                delay(10).then(() => alert('HAS GANADO!!!'));
+                
             }
 
             break;
@@ -132,6 +140,10 @@ gui.reset.onclick = () => {
     display2.innerHTML = '*';
     display3.innerHTML = '*';
     display4.innerHTML = '*';
+    display1.style.color = 'white';
+    display2.style.color = 'white';
+    display3.style.color = 'white';
+    display4.style.color = 'white';
     estado = ESTADO.INIT
     num_sec();
     console.log('numero secreto',numero_secreto)
