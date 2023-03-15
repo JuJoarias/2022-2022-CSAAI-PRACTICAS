@@ -6,35 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="crono.js"></script>
     <script src="botones_calc.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>¡BOOM!</title>
 </head>
 
 <!--https://www.youtube.com/watch?v=7YDagj3cVAk   tutorial para el aspecto de la calculadora--> 
 <body>
-    <p id="display_nsecreto1"> *</p>
-    <p id="display_nsecreto2"> *</p>
-    <p id="display_nsecreto3"> *</p>
-    <p id="display_nsecreto4"> *</p>
+    <div class="container">
+        <div class="calculadora">
+            <div class="display">
+                <div id="display_numeros">
+                    <p id="display_nsecreto1"> *</p>
+                    <p id="display_nsecreto2"> *</p>
+                    <p id="display_nsecreto3"> *</p>
+                    <p id="display_nsecreto4"> *</p>
+                </div>
+                <div id="display_crono">
+                    <p id="display">0:0:0</p>
+                </div>
+            </div>
 
-    <p id="display">0:0:0</p>
-    <button type="button" id="boton7" value="7" class="digito">7</button>
-    <button type="button" id="boton8" value="8" class="digito">8</button>
-    <button type="button" id="boton9" value="9" class="digito">9</button>
-    <br>
-    <button type="button" id="boton4" value="4" class="digito">4</button>
-    <button type="button" id="boton5" value="5" class="digito">5</button>
-    <button type="button" id="boton6" value="6" class="digito">6</button>
-    <br>
-    <button type="button" id="boton1" value="1" class="digito">1</button>
-    <button type="button" id="boton2" value="2" class="digito">2</button>
-    <button type="button" id="boton3" value="3" class="digito">3</button>
-    <br>
-    <button type="button" id="boton0" class="espacio"> </button>
-    <button type="button" id="boton0" value="0" class="digito">0</button>
-    <button type="button" id="boton0" class="espacio"></button>
-    <br>
-    <button type="button" id="start">Start</button>
-    <button type="button" id="stop">Stop</button>
-    <button type="button" id="reset">Reset</button>
+            <button type="button" id="boton7" value="7" class="digito">7</button>
+            <button type="button" id="boton8" value="8" class="digito">8</button>
+            <button type="button" id="boton9" value="9" class="digito">9</button>
+            
+            <button type="button" id="boton4" value="4" class="digito">4</button>
+            <button type="button" id="boton5" value="5" class="digito">5</button>
+            <button type="button" id="boton6" value="6" class="digito">6</button>
+            
+            <button type="button" id="boton1" value="1" class="digito">1</button>
+            <button type="button" id="boton2" value="2" class="digito">2</button>
+            <button type="button" id="boton3" value="3" class="digito">3</button>
+            
+            <button type="button" id="boton0" value="0" class="col-2 digito">0</button>
+            
+            <button type="button" id="start">Start</button>
+            <button type="button" id="stop">Stop</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+    </div>
 </body>
 </html>
