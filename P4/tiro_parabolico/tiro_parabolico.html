@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="tiro.js" defer></script>
+    <script src="crono.js"></script> <!--Es necesario para el tiempo -->
     <link rel="stylesheet" href="canvas.css">
     <title>Tiro parabólico</title>
 </head>
 <body>
     <h2>Tiro parabólico</h2>
     <canvas id="canvas"></canvas>
-
+    <p>Temporizador</p>
+    <p id="display">0:0:0</p>
     <p>Angulo de tiro <input type="range" id="angulo"> <span id="angulo_disp">0</span></p>
     <p>Velocidad <input type="range" id="velocidad"> <span id="vel_disp">0</span></p>
     <button type="button" id="go">GO</button>
