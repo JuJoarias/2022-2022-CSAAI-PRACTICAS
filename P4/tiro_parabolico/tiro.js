@@ -18,92 +18,130 @@ angulo.oninput = () => {
 }
 
 //-- Definir el tamaño del canvas
-canvas.width = 500;
-canvas.height = 300;
+canvas.width = 800;
+canvas.height = 400;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-//-- Coordenadas del objeto
-let x = 0;
-let y = 21;
+//-- Coordenadas del projectil 
+let x = 5;
+let y = 52;
+
+// objetivo 
+function getRandomX0(min, max) {
+  return Math.random() * (max - min) + min;
+}
+let xomin = 200;
+let xomax = 770;
+let xo = getRandomX0(xomin, xomax); //getRandomXO(xomin,xomax);
+let yo = 27;
 
 //-- Velocidades del objeto
 const crono = new Crono(display);
 
-let velx = 0;
+
+let vel = 0;
+velocidad.value = 0;
+angulo.value= 0;
 let t = 0;
-let g = 0;
+let g = 9.8;
 let angle = 0;
-let tiempo = false
+let tiempo = false;
 
 go.onclick = () => {
   crono.start();
-    velx = velocidad.value ;
-    angle = angulo.value
-    g = 9.8;
-    tiempo = true
-    console.log(velx)
-    console.log(angle)
+  tiempo = true;
+  lanzar();
 }
 
 reset.onclick = () => {
-    x = 0;
-    t = 0;
-    g = 0;
-    tiempo = false;
-    y = 21;
-    velx = 0;
-    crono.stop();
-    crono.reset();
+  //location.reload();
+  x = 5;
+  y = 52;
+  t = 0;
+  vel = 0;
+  angle = 0;
+  tiempo = false;
+  crono.reset();
 }
 
+function dibujarP(x,y){
+  ctx.beginPath();
+  ctx.rect(x, canvas.height -y, 50, 50);
+
+  //-- Dibujar
+  ctx.fillStyle = 'red';
+
+  //-- Rellenar
+  ctx.fill();
+
+  //-- Dibujar el trazo
+  ctx.stroke();
+  ctx.closePath();
+}
+
+function dibujarO(x,y){
+  ctx.beginPath();
+  ctx.arc(x,canvas.height -y, 25, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'blue';
+  ctx.lineWidth = 2;
+  ctx.fillStyle = 'green';
+
+  //-- Dibujar el relleno
+  ctx.fill();    
+
+  //-- Dibujar el trazo
+  ctx.stroke();
+
+  ctx.closePath();
+}
+
+dibujarO(xo,yo);
+dibujarP(x,y);
+
 //-- Función principal de animación
-function update() 
-{
-  
-  
+function lanzar() {
+  console.log('lanzar')
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posición del  elemento
   //-- (física del movimiento rectilineo uniforme)
   if (tiempo){
-    console.log('probando')
-    
+    console.log('go')
+    vel = velocidad.value*0.123;
+    angle = angulo.value;
     t += 0.04;
+
+  }else {
+    console.log('stop')
+    crono.stop();
+    vel = 0;
+    t = 0;
   }
+
+
+    //-- Actualizar la posición velocidad
+    vx = vel * Math.cos((angle * Math.PI) / 180);
+    vy = vel * Math.sin((angle * Math.PI) / 180);
+    
+    x = x + vx * t;
+    y = y + vy * t - 0.5 * g * t * t;
+    
 
    //-- Condición de rebote en extremos verticales del canvas
-   if (y <= 25 && t != 5 ) {
-    velx = 0;
-    crono.stop();
+  if (y <= 50 ) {
+    vel = 0;
     t = 0;
-    tiempo = false;
-    
+    tiempo = false; 
   }
-
-  //-- Actualizar la posición velocidad
-  x = x + velx*0.1 * Math.cos(angle * Math.PI / 180) * t;
-  y = y + velx * Math.sin(angle * Math.PI / 180) * t - 0.5 * g * t * t;
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   //-- 3) Dibujar los elementos visibles
-  ctx.beginPath();
-    ctx.rect(x, canvas.height -y, 20, 20);
+  dibujarO(xo,yo);
+  dibujarP(x,y);
 
-    //-- Dibujar
-    ctx.fillStyle = 'red';
-
-    //-- Rellenar
-    ctx.fill();
-
-    //-- Dibujar el trazo
-    ctx.stroke()
-  ctx.closePath();
-
-  //-- 4) Volver a ejecutar update cuando toque
-  requestAnimationFrame(update);
+  //-- 4) repetir
+  requestAnimationFrame(lanzar);
 }
-
-update();
