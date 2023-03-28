@@ -52,7 +52,7 @@ let tiempo = false;
 go.onclick = () => {
   crono.start();
   tiempo = true;
-  lanzar();
+  
 }
 
 reset.onclick = () => {
@@ -102,7 +102,13 @@ dibujarP(x,y);
 
 //-- Función principal de animación
 function lanzar() {
-  console.log('lanzar')
+  //-- Actualizar la posición velocidad
+  vx = vel * Math.cos((angle * Math.PI) / 180);
+  vy = vel * Math.sin((angle * Math.PI) / 180);
+  
+  x = x + vx * t;
+  y = y + vy * t - 0.5 * g * t * t;
+
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posición del  elemento
   //-- (física del movimiento rectilineo uniforme)
@@ -118,15 +124,6 @@ function lanzar() {
     vel = 0;
     t = 0;
   }
-
-
-    //-- Actualizar la posición velocidad
-    vx = vel * Math.cos((angle * Math.PI) / 180);
-    vy = vel * Math.sin((angle * Math.PI) / 180);
-    
-    x = x + vx * t;
-    y = y + vy * t - 0.5 * g * t * t;
-    
 
    //-- Condición de rebote en extremos verticales del canvas
   if (y <= 50 ) {
@@ -145,3 +142,4 @@ function lanzar() {
   //-- 4) repetir
   requestAnimationFrame(lanzar);
 }
+lanzar();
