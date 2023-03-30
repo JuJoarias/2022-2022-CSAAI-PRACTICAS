@@ -83,8 +83,8 @@ function dibujarP(x,y){
   ctx.stroke();
   ctx.closePath();
 }
-console.log('Rango de x',range(Math.round(xo)-75, Math.round(xo) +25))
-console.log('Rango de y',range(yo+20, yo+75))
+console.log('Rango de x',range(Math.round(xo)-50, Math.round(xo) +25))
+console.log('Rango de y',range(yo-10, yo+45))
 
 
 function dibujarO(x,y){
@@ -142,7 +142,7 @@ function lanzar() {
     t = 0;
     tiempo = false; 
   }
-  if (range(Math.round(xo) -25, Math.round(xo) + 25).includes(Math.round(x)) && range(yo+20, yo+70).includes(Math.round(y))){
+  if (range(Math.round(xo) -50, Math.round(xo) + 25).includes(Math.round(x)) && range(yo-10, yo+45).includes(Math.round(y))){
     console.log('diana')
     vel = 0;
     t = 0;
