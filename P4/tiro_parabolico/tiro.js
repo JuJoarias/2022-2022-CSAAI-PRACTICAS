@@ -26,7 +26,7 @@ const ctx = canvas.getContext("2d");
 
 //-- Coordenadas del projectil 
 let x = 5;
-let y = 52;
+let y = 52; // 52
 
 // objetivo 
 function getRandomX0(min, max) {
@@ -80,6 +80,9 @@ function dibujarP(x,y){
   ctx.stroke();
   ctx.closePath();
 }
+console.log('Rango de x',range(Math.round(xo)-75, Math.round(xo) +25))
+console.log('Rango de y',range(yo+20, yo+75))
+
 
 function dibujarO(x,y){
   ctx.beginPath();
@@ -100,6 +103,12 @@ function dibujarO(x,y){
 dibujarO(xo,yo);
 dibujarP(x,y);
 
+function range(start, stop=undefined, step=1) {
+  const startArray = stop  === undefined ? 0 : start;
+  const stopArray = stop  === undefined ? start : stop;
+  return Array.from({ length: (stopArray - startArray) / step + 1}, (_, i) => startArray + (i * step));
+}
+
 //-- Función principal de animación
 function lanzar() {
   //-- Actualizar la posición velocidad
@@ -119,18 +128,25 @@ function lanzar() {
     t += 0.04;
 
   }else {
-    console.log('stop')
     crono.stop();
     vel = 0;
     t = 0;
   }
 
    //-- Condición de rebote en extremos verticales del canvas
-  if (y <= 50 ) {
+  if (y <= 50 ) { // 50
     vel = 0;
     t = 0;
     tiempo = false; 
   }
+  if (range(Math.round(xo) -75, Math.round(xo) + 25).includes(Math.round(x)) && range(yo+20, yo+70).includes(Math.round(y))){
+    console.log('diana')
+    vel = 0;
+    t = 0;
+    tiempo = false;
+    //window.alert('HAS GANADO!!!');
+    //location.reload();
+  }else{console.log('FALLASTE')}
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
