@@ -1,5 +1,8 @@
 canvas {
-    background-color: lightblue;
+    background-image: url('campo.jpeg');
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
     border-style: solid;
     border-width: 1px;
     border-color: black;

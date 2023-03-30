@@ -8,6 +8,9 @@ const angulo = document.getElementById("angulo");
 const ang_disp = document.getElementById("angulo_disp");
 const vel_disp = document.getElementById("vel_disp");
 const display = document.getElementById("display");
+const flecha = document.getElementById("flecha");
+const diana = document.getElementById("diana");
+
 
 velocidad.oninput = () => {
     vel_disp.innerHTML = velocidad.value;
@@ -26,7 +29,7 @@ const ctx = canvas.getContext("2d");
 
 //-- Coordenadas del projectil 
 let x = 5;
-let y = 52; // 52
+let y = 88; // 52
 
 // objetivo 
 function getRandomX0(min, max) {
@@ -35,7 +38,7 @@ function getRandomX0(min, max) {
 let xomin = 200;
 let xomax = 770;
 let xo = getRandomX0(xomin, xomax); //getRandomXO(xomin,xomax);
-let yo = 27;
+let yo = 80;
 
 //-- Velocidades del objeto
 const crono = new Crono(display);
@@ -58,7 +61,7 @@ go.onclick = () => {
 reset.onclick = () => {
   //location.reload();
   x = 5;
-  y = 52;
+  y = 88;
   t = 0;
   vel = 0;
   angle = 0;
@@ -68,7 +71,7 @@ reset.onclick = () => {
 
 function dibujarP(x,y){
   ctx.beginPath();
-  ctx.rect(x, canvas.height -y, 50, 50);
+  ctx.drawImage(flecha,x, canvas.height -y, 50, 50);
 
   //-- Dibujar
   ctx.fillStyle = 'red';
@@ -86,7 +89,7 @@ console.log('Rango de y',range(yo+20, yo+75))
 
 function dibujarO(x,y){
   ctx.beginPath();
-  ctx.arc(x,canvas.height -y, 25, 0, 2 * Math.PI);
+  ctx.drawImage(diana,x,canvas.height -y, 50, 50);
   ctx.strokeStyle = 'blue';
   ctx.lineWidth = 2;
   ctx.fillStyle = 'green';
@@ -134,12 +137,12 @@ function lanzar() {
   }
 
    //-- Condición de rebote en extremos verticales del canvas
-  if (y <= 50 ) { // 50
+  if (y <= 80 ) { // 50
     vel = 0;
     t = 0;
     tiempo = false; 
   }
-  if (range(Math.round(xo) -75, Math.round(xo) + 25).includes(Math.round(x)) && range(yo+20, yo+70).includes(Math.round(y))){
+  if (range(Math.round(xo) -25, Math.round(xo) + 25).includes(Math.round(x)) && range(yo+20, yo+70).includes(Math.round(y))){
     console.log('diana')
     vel = 0;
     t = 0;
