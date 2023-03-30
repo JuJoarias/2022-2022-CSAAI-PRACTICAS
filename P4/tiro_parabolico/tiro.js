@@ -38,7 +38,7 @@ function getRandomX0(min, max) {
 let xomin = 200;
 let xomax = 770;
 let xo = getRandomX0(xomin, xomax); //getRandomXO(xomin,xomax);
-let yo = 80;
+let yo = 100;
 
 //-- Velocidades del objeto
 const crono = new Crono(display);
@@ -89,7 +89,7 @@ console.log('Rango de y',range(yo-10, yo+45))
 
 function dibujarO(x,y){
   ctx.beginPath();
-  ctx.drawImage(diana,x,canvas.height -y, 50, 50);
+  ctx.drawImage(diana,x,canvas.height -y, 70, 70);
   ctx.strokeStyle = 'blue';
   ctx.lineWidth = 2;
   ctx.fillStyle = 'green';
@@ -141,7 +141,7 @@ function lanzar() {
     vel = 0;
     t = 0;
     tiempo = false; 
-  }
+  } // ajustar los rangos de colision
   if (range(Math.round(xo) -50, Math.round(xo) + 25).includes(Math.round(x)) && range(yo-10, yo+45).includes(Math.round(y))){
     console.log('diana')
     vel = 0;
