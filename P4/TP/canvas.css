@@ -8,3 +8,15 @@ canvas {
     border-color: black;
     border-radius: 5px;
 }
+
+#flecha{
+    display: none;
+}
+
+#diana{
+    display: none;
+}
+
+#arco{
+    display: none;
+}

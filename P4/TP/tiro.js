@@ -10,6 +10,10 @@ const vel_disp = document.getElementById("vel_disp");
 const display = document.getElementById("display");
 const flecha = document.getElementById("flecha");
 const diana = document.getElementById("diana");
+const arco = document.getElementById("arco");
+
+let tiro = false;
+
 
 
 velocidad.oninput = () => {
@@ -29,7 +33,7 @@ const ctx = canvas.getContext("2d");
 
 //-- Coordenadas del projectil 
 let x = 5;
-let y = 88; // 52
+let y = 88; 
 
 // objetivo 
 function getRandomX0(min, max) {
@@ -55,7 +59,7 @@ let tiempo = false;
 go.onclick = () => {
   crono.start();
   tiempo = true;
-  
+  tiro = true;
 }
 
 reset.onclick = () => {
@@ -67,14 +71,12 @@ reset.onclick = () => {
   angle = 0;
   tiempo = false;
   crono.reset();
+  tiro = false;
 }
 
 function dibujarP(x,y){
   ctx.beginPath();
   ctx.drawImage(flecha,x, canvas.height -y, 50, 50);
-
-  //-- Dibujar
-  ctx.fillStyle = 'red';
 
   //-- Rellenar
   ctx.fill();
@@ -83,17 +85,12 @@ function dibujarP(x,y){
   ctx.stroke();
   ctx.closePath();
 }
-console.log('Rango de x',range(Math.round(xo)-50, Math.round(xo) +25))
-console.log('Rango de y',range(yo-10, yo+45))
-
 
 function dibujarO(x,y){
   ctx.beginPath();
   ctx.drawImage(diana,x,canvas.height -y, 70, 70);
-  ctx.strokeStyle = 'blue';
-  ctx.lineWidth = 2;
-  ctx.fillStyle = 'green';
-
+  ctx.drawImage(arco,0,canvas.height -y, 65, 65);
+ 
   //-- Dibujar el relleno
   ctx.fill();    
 
@@ -125,7 +122,6 @@ function lanzar() {
   //-- 1) Actualizar posición del  elemento
   //-- (física del movimiento rectilineo uniforme)
   if (tiempo){
-    console.log('go')
     vel = velocidad.value*0.123;
     angle = angulo.value;
     t += 0.04;
@@ -137,27 +133,28 @@ function lanzar() {
   }
 
    //-- Condición de rebote en extremos verticales del canvas
-  if (y <= 80 ) { // 50
+  if (y <= 80 && tiro) { 
     vel = 0;
     t = 0;
     tiempo = false; 
+    tiro = false;
+    alert('Has fallado, intenta de nuevo');
   } // ajustar los rangos de colision
-  if (range(Math.round(xo) -50, Math.round(xo) + 25).includes(Math.round(x)) && range(yo-10, yo+45).includes(Math.round(y))){
-    console.log('diana')
+  if (range(Math.round(xo) -40, Math.round(xo) + 25).includes(Math.round(x)) && range(yo-35, yo+30).includes(Math.round(y)) && tiro){
     vel = 0;
     t = 0;
     tiempo = false;
-    //window.alert('HAS GANADO!!!');
+    alert('HAS GANADO!!!');
+    tiro = false; 
     //location.reload();
-  }else{console.log('FALLASTE')}
+  }
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   //-- 3) Dibujar los elementos visibles
-  dibujarO(xo,yo);
+  dibujarO(xo,yo); 
   dibujarP(x,y);
-
   //-- 4) repetir
   requestAnimationFrame(lanzar);
 }
