@@ -4,7 +4,8 @@ const selectors = {
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
     comenzar: document.querySelector('button'),
-    win: document.querySelector('.win')
+    win: document.querySelector('.win'),
+    reset: document.getElementById('reset')
 }
 
 const state = {
@@ -15,8 +16,7 @@ const state = {
     loop: null
 }
 
-const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+const generateGame = (dimensions) => {
 
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -113,11 +113,25 @@ const attachEventListeners = () => {
         } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
             startGame()
         }
+        // añadir el boton reset
     })
 }
 
 // Generamos el juego
-generateGame()
+var tamaño = document.getElementById('tamaño')
+tamaño.value = 0;
+tamaño.onchange = function() {myFunction()};
+console.log(parseInt(tamaño))
+
+function myFunction() {
+    var dimensiones = document.getElementById('tamaño')
+    if (dimensiones.value != 'Elija el tamaño del tablero'){
+        console.log('adios')
+        console.log(dimensiones.value)
+        generateGame(dimensiones.value)
+    }else{console.log('hola')}
+}
+
 
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
