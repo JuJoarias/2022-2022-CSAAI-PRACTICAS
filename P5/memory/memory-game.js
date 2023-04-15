@@ -114,6 +114,9 @@ const attachEventListeners = () => {
             startGame()
         }
         // añadir el boton reset
+        if(eventTarget == reset){
+            location.reload();
+        }
     })
 }
 
@@ -125,11 +128,10 @@ console.log(parseInt(tamaño))
 
 function myFunction() {
     var dimensiones = document.getElementById('tamaño')
-    if (dimensiones.value != 'Elija el tamaño del tablero'){
-        console.log('adios')
+    if (dimensiones.value == 2 || dimensiones.value == 4 || dimensiones.value == 6 ){
         console.log(dimensiones.value)
         generateGame(dimensiones.value)
-    }else{console.log('hola')}
+    }else{ throw new Error("Los tamaños no son validos.")}
 }
 
 
