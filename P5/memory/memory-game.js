@@ -132,7 +132,7 @@ const attachEventListeners = () => {
 
 // Generamos el juego
 var tamaño = document.getElementById('tamaño')
-tamaño.value = 0;
+tamaño.value = null;
 tamaño.onchange = function() {myFunction()};
 console.log(parseInt(tamaño))
 
