@@ -66,6 +66,10 @@ input{
     width: 100%;
 }
 
+.imagenes{
+    display: none;
+}
+
 .tablero,
 .win {
     border-radius: 5px;
