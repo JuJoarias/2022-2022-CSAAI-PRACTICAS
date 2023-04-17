@@ -23,39 +23,24 @@ const generateGame = (dimensions) => {
     if (dimensions % 2 !== 0) {
         throw new Error("Las dimensiones del tablero deben ser un número par.")
     }
-    
-    var maul = new Image();
-    //-- maul.onload = imagenCargada;
-    maul.src = 'imagenes/Maul.webp'
-// lo mismo con las demas imagenes
-    var palpatine = new Image();
-    var dooku = new Image();
-    var grievous = new Image();
-    var boba = new Image();
-    var vader = new Image();
-    var jabba = new Image();
-    var kylo = new Image();
-    var anakin = new Image();
-    var obiwan = new Image();
-    var ashoka = new Image();
-    var rex = new Image();
-    var leia = new Image();
-    var han = new Image();
-    var chewgy = new Image();
-    var luke = new Image();
-
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🥔',
-        '🍒',
-        '🥑',
-        '🌽',
-        '🥕',
-        '🍇',
-        '🍉',
-        '🍌',
-        '🥭',
-        '🍍'
+    var emojis = ['🌌',
+        '🔅',
+        '🌠',
+        '🚀',
+        '🛸',
+        '🛰',
+        '🔭',
+        '🪐',
+        '⚛',
+        '👽',
+        '🤖',
+        '☄',
+        '👾',
+        '🧑‍🚀',
+        '🌍',
+        '🌕'
     ]
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
@@ -80,7 +65,7 @@ const generateGame = (dimensions) => {
             `).join('')}
        </div>
     `
-    
+
     //-- Vamos a utilizar un parser para transformar la cadena que hemos generado
     // en código html.
     const parser = new DOMParser().parseFromString(cards, 'text/html')
