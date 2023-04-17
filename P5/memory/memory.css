@@ -114,9 +114,10 @@ input{
 }
 
 .card-back {
+    position: absolute;
     font-size: 28pt;
     text-align: center;
-    line-height: 100px;
+    line-height: 70px;
     background-image: url(imagenes/espacio2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
