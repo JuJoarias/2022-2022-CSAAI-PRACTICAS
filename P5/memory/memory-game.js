@@ -40,7 +40,9 @@ const generateGame = (dimensions) => {
         '👾',
         '🧑‍🚀',
         '🌍',
-        '🌕'
+        '🌕',
+        '🧑‍🔬',
+        '🌟'
     ]
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
