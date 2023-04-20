@@ -6,7 +6,8 @@ const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
 //-- Acceso al deslizador
-const deslizador = document.getElementById('deslizador');
+const deslizador_r = document.getElementById('deslizador_rojo');
+const deslizador_g = document.getElementById('deslizador_verde');
 
 //-- Valor del deslizador
 const range_value = document.getElementById('range_value');
@@ -29,24 +30,22 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
+let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
 
 //-- Función de retrollamada del deslizador
-deslizador.oninput = () => {
+deslizador_r.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
-  range_value.innerHTML = deslizador.value;
+  range_value.innerHTML = deslizador_r.value;
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavía
   ctx.drawImage(img, 0,0);
 
-  //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  //-- Obtener el array con todos los píxeles
-  let data = imgData.data
+  var data = imgData.data
 
   //-- Obtener el umbral de rojo del deslizador
-  umbral = deslizador.value
+  umbral = deslizador_r.value
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
@@ -57,5 +56,28 @@ deslizador.oninput = () => {
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
+
+deslizador_g.oninput = () => {
+    //-- Mostrar el nuevo valor del deslizador
+    range_value_g.innerHTML = deslizador_g.value;
+  
+    //-- Situar la imagen original en el canvas
+    //-- No se han hecho manipulaciones todavía
+    ctx.drawImage(img, 0,0);
+
+    var data = imgData.data
+  
+    //-- Obtener el umbral de rojo del deslizador
+    umbral2 = deslizador_g.value
+  
+    //-- Filtrar la imagen según el nuevo umbral
+    for (let i = 0; i < data.length; i+=4) {
+      if (data[i +1] > umbral2)
+        data[i +1] = umbral2;
+    }
+  
+    //-- Poner la imagen modificada en el canvas
+    ctx.putImageData(imgData, 0, 0);
+  }
 
 console.log("Fin...");
