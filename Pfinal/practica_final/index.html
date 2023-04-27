@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pf.css">
     <script src="Pf.js" defer></script>
     <title>Simulando la Red</title>
 </head>
 <body>
     <p>Imagen en Origen</p>
-    <img src="logoURJC.png" id="imagesrc">
-    <img src="logoURJCh.png" id="imagesrchide">    
-    <img src="cloud.jpg" id="cloud">
+    <img src="planos.png" id="imagesrc" width="498" height="498">
+    <img src="planos.png" id="imagesrchide" width="498" height="498">    
+    <img src="cargar.gif" id="cloud">
     <button id="bsend">Enviar</button>    
     <p>Imagen en Destino</p>
     <canvas id="canvas"></canvas>
@@ -22,7 +23,6 @@
     <p>Delay de los nodos en ms</p> 
     <input type="range" id="msdelay" min="1" max="5" value="1"/>
     <p id="msdelay_value">1</p>  
-    <p>La red</p>
-    <img src="net.svg">    
+        
 </body>
 </html>

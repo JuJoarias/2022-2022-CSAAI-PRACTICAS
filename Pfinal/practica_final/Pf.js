@@ -43,7 +43,7 @@ imgCloud.onload = function () {
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavía
-  ctx.drawImage(imgCloud, 0, 0);
+  ctx.drawImage(imgCloud,0,0);
 
 }
 
