@@ -123,7 +123,7 @@ const sendImage = () => {
 
      if (sh2 > 0) {
        //-- seleccionamos el rectángulo 2
-       imgData = ctx.getImageData(sx2, sh2, sw2, sw2);
+       imgData = ctx.getImageData(sx2, sy2, sw2, sh2);
 
        //-- Obtener el array con todos los píxeles
        data = imgData.data
