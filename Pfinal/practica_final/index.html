@@ -9,20 +9,34 @@
     <title>Simulando la Red</title>
 </head>
 <body>
-    <p>Imagen en Origen</p>
-    <img src="planos.png" id="imagesrc" width="498" height="498">
-    <img src="planos.png" id="imagesrchide" width="498" height="498">    
-    <img src="cargar.gif" id="cloud">
-    <button id="bsend">Enviar</button>    
-    <p>Imagen en Destino</p>
-    <canvas id="canvas"></canvas>
-    <br>
-    <p>Numero de nodos</p>
-    <input type="range" id="nodedelay" min="3" max="8" value="3"/>
-    <p id="nodedelay_value">3</p>  
-    <p>Delay de los nodos en ms</p> 
-    <input type="range" id="msdelay" min="1" max="5" value="1"/>
-    <p id="msdelay_value">1</p>  
-        
+    <div id="transmision">
+        <h1>Ayuda a transmitir los planos de la estrella de la muerte a los rebeldes</h1>
+        <div id="imagenes">
+            <div id="origen">
+                <p>Imagen en Origen</p>
+                <img src="planos.png" id="imagesrc" >
+                <img src="planos.png" id="imagesrchide" >    
+                <img src="cargar.gif" id="cloud"> 
+            </div>
+            <div id="destino">
+                <p>Imagen en Destino</p>
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div id="controles">
+            <div id="nodos">
+                <p>Numero de nodos</p>
+                <input type="range" id="nodedelay" min="3" max="8" value="3"/>
+                <p id="nodedelay_value">3</p>
+            </div>
+            <div id="delay">
+                <p>Delay de los nodos en ms</p> 
+                <input type="range" id="msdelay" min="1" max="5" value="1"/>
+                <p id="msdelay_value">1</p> 
+            </div>
+            <button id="bsend">Enviar</button>
+        </div>
+    </div>
+    
 </body>
 </html>
