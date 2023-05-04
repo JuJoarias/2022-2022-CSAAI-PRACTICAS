@@ -38,7 +38,7 @@ body {
 
 #controles{
   display: flex;
-  gap: 0px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -91,7 +91,7 @@ button:hover{
 
   #controles{
     display: flex;
-    gap: 20px;
+    gap: 0px;
     flex-wrap: wrap;
     justify-content: center;
   }
