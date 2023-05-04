@@ -16,6 +16,7 @@ const imgFront = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 const musica = new Audio('musica.mp3');
 
+musica.loop = true;
 musica.play();
 
 //-- Gestionar el estado el envío
