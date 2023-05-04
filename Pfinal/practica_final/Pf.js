@@ -14,6 +14,9 @@ const imgBack = document.getElementById('imagesrchide');
 const imgCloud = document.getElementById('cloud');
 const imgFront = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
+const musica = new Audio('musica')
+
+musica.play();
 
 //-- Gestionar el estado el envío
 const state = {
