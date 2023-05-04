@@ -14,7 +14,7 @@ const imgBack = document.getElementById('imagesrchide');
 const imgCloud = document.getElementById('cloud');
 const imgFront = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
-const musica = new Audio('musica.mp3')
+const musica = new Audio('musica.mp3');
 
 musica.play();
 
