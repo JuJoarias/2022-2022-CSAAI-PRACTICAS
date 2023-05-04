@@ -148,6 +148,8 @@ const sendImage = () => {
 
     // Paramos el loop si hemos terminado de enviar
     if (state.sendingPackage == state.totalPackages) {
+      canvas.width = imgBack.width;
+      canvas.height = imgBack.height;
       ctx.drawImage(imgBack, 0, 0); 
       console.log("Envio terminado...");
       state.sendingImage = false;             
